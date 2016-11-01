@@ -1,0 +1,17 @@
+RewriteEngine on
+RewriteBase /test1/
+RewriteRule ^(.*)$ index.php
+
+
+
+  <Directory /var/www/>
+	Options Indexes FollowSymLinks
+	AllowOverride All
+	Require all granted
+</Directory>
+
+
+Redirect / test1/index.php   ????????
+
+AllowOverride None
+AllowOverride All
