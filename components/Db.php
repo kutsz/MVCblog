@@ -13,7 +13,7 @@ class Db
 
 		$dsn = "mysql:host={$params['host']};dbname={$params['dbname']};charset={$params['charset']}";
 		$db = new PDO($dsn ,$params['user'],$params['password']);
-		// $db->exec("set name utf8");
+	
 
 		return $db;
 	}

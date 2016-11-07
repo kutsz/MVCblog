@@ -22,7 +22,7 @@ class AdminFriendController extends AdminBase
             // Получаем данные из формы
             $title = $_POST['title'];
             $link = $_POST['link'];
-       
+            
             
             // Флаг ошибок в форме
             $errors = false;
@@ -31,7 +31,7 @@ class AdminFriendController extends AdminBase
             if ((!isset($title) || empty($title)) || (!isset($link) || empty($link))) 
             {
                $errors[] = 'Заполните поля';
-            }
+           }
 
 
            if ($errors == false) {
@@ -44,24 +44,24 @@ class AdminFriendController extends AdminBase
         }
     }
 
-        require_once(ROOT . '/views/admin_friend/create.php');
-        return true;
-    }
+    require_once(ROOT . '/views/admin_friend/create.php');
+    return true;
+}
 
-    public function actionView(){
+public function actionView(){
        // Проверка доступа
-        self::checkAdmin();
+    self::checkAdmin();
 
         // Получаем данные о конкретной категории
-        $friends = Friend::getFriend();
+    $friends = Friend::getFriend();
 
-        require_once(ROOT . '/views/admin_friend/view.php');
-          return true;
+    require_once(ROOT . '/views/admin_friend/view.php');
+    return true;
 
 
 }
     /**
-     * Action для страницы "Редактировать категорию"///////////////////
+     * Action для страницы "Редактировать категорию"
      */
     public function actionUpdate($id)
     {

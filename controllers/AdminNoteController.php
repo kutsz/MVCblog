@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Контроллер AdminCategoryController
+ * Контроллер AdminNoteController
  * Управление категориями 
  */
 class AdminNoteController extends AdminBase
@@ -42,33 +42,33 @@ class AdminNoteController extends AdminBase
             if ((!isset($title) || empty($title)) || (!isset($meta_d) || empty($meta_d)) 
                 || (!isset($meta_k) || empty($meta_k)) || (!isset($text) || empty($text))) 
             {
-               $errors[] = 'Заполните поля';
-            }
+             $errors[] = 'Заполните поля';
+         }
 
 
-           if ($errors == false) {
+         if ($errors == false) {
                 // Если ошибок нет
                 // Добавляем новую категорию
             Data::createNote($title, $meta_d, $meta_k, $date, $description, $text, $author, $img, $cat);
 
                 // Перенаправляем пользователя на страницу управлениями категориями
-            header("Location: /MVCBlog/admin/note/create");   //??  TODO
+            header("Location: /MVCBlog/admin/note/create");  
         }
     }
 
-        require_once(ROOT . '/views/admin_note/create.php');
-        return true;
-    }
+    require_once(ROOT . '/views/admin_note/create.php');
+    return true;
+}
 
-    public function actionView(){
+public function actionView(){
        // Проверка доступа
-        self::checkAdmin();
+    self::checkAdmin();
 
         // Получаем данные о конкретной категории
-        $notes = Data::getNotesAdmin();
+    $notes = Data::getNotesAdmin();
 
-        require_once(ROOT . '/views/admin_note/view.php');
-          return true;
+    require_once(ROOT . '/views/admin_note/view.php');
+    return true;
 
 
 }

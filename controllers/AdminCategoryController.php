@@ -7,13 +7,6 @@
 class AdminCategoryController extends AdminBase
 {
 
-    // public function actionIndex()
-    // {
-
-    //     require_once(ROOT . '/views/admin_category/index.php');
-    //     return true;
-    // }
-
 
     /**
      * Action для страницы "Добавить категорию"
@@ -24,31 +17,31 @@ class AdminCategoryController extends AdminBase
 
 
         // Проверка доступа
-         self::checkAdmin();
+       self::checkAdmin();
 
         // Обработка формы
-        if (isset($_POST['submit'])) {
+       if (isset($_POST['submit'])) {
             // Если форма отправлена
             // Получаем данные из формы
-            $title = $_POST['title'];
-            $meta_d = $_POST['meta_d'];
-            $meta_k = $_POST['meta_k'];
-            $text = $_POST['text'];
+        $title = $_POST['title'];
+        $meta_d = $_POST['meta_d'];
+        $meta_k = $_POST['meta_k'];
+        $text = $_POST['text'];
             // Флаг ошибок в форме
-            $errors = false;
+        $errors = false;
 
         // При необходимости можно валидировать значения нужным образом
-            if ((!isset($title) || empty($title)) || (!isset($meta_d) || empty($meta_d)) 
-                || (!isset($meta_k) || empty($meta_k)) || (!isset($text) || empty($text))) 
-            {
-               $errors[] = 'Заполните поля';
-            }
+        if ((!isset($title) || empty($title)) || (!isset($meta_d) || empty($meta_d)) 
+            || (!isset($meta_k) || empty($meta_k)) || (!isset($text) || empty($text))) 
+        {
+         $errors[] = 'Заполните поля';
+     }
 
 
-           if ($errors == false) {
+     if ($errors == false) {
                 // Если ошибок нет
                 // Добавляем новую категорию
-            Category::createCategory($title, $meta_d, $meta_k, $text);
+        Category::createCategory($title, $meta_d, $meta_k, $text);
 
                 // Перенаправляем пользователя на страницу управлениями категориями
             header("Location: /MVCBlog/admin/category/create");   //??  TODO
@@ -61,18 +54,18 @@ class AdminCategoryController extends AdminBase
 
 public function actionView(){
        // Проверка доступа
-        self::checkAdmin();
+    self::checkAdmin();
 
         // Получаем данные о конкретной категории
-        $categories = Category::getCategoriesListBy_id_title();
+    $categories = Category::getCategoriesListBy_id_title();
 
-        require_once(ROOT . '/views/admin_category/view.php');
-          return true;
+    require_once(ROOT . '/views/admin_category/view.php');
+    return true;
 
 
 }
     /**
-     * Action для страницы "Редактировать категорию"///////////////////
+     * Action для страницы "Редактировать категорию"
      */
     public function actionUpdate($id)
     {
@@ -103,44 +96,32 @@ public function actionView(){
         require_once(ROOT . '/views/admin_category/update.php');
         return true;
     }
-// public function actionCategoriesDelete(){
-//        // Проверка доступа
-//         self::checkAdmin();
-
-//         // Получаем данные о конкретной категории
-//         $categories = Category::getCategoriesListBy_id_title();
-
-//         require_once(ROOT . '/views/admin_category/delete.php');
-//           return true;
-
-
-// }
-
-    /**
+    
+   /**
      * Action для страницы "Удалить категорию"
      */
-    public function actionDelete()
-    {
+   public function actionDelete()
+   {
         // Проверка доступа
-        self::checkAdmin();
+    self::checkAdmin();
 
         // Получаем данные о конкретной категории
-        $categories = Category::getCategoriesListBy_id_title();
+    $categories = Category::getCategoriesListBy_id_title();
 
         // Обработка формы
-        if (isset($_POST['submit'])) {
-            $id = $_POST['id'];
+    if (isset($_POST['submit'])) {
+        $id = $_POST['id'];
             // Если форма отправлена
             // Удаляем категорию
-            Category::deleteCategoryById($id);
+        Category::deleteCategoryById($id);
 
             // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /MVCBlog/admin/category/delete");
-        }
+        header("Location: /MVCBlog/admin/category/delete");
+    }
 
         // Подключаем вид
-        require_once(ROOT . '/views/admin_category/delete.php');
-        return true;
-    }
+    require_once(ROOT . '/views/admin_category/delete.php');
+    return true;
+}
 
 }

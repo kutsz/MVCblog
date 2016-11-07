@@ -38,14 +38,14 @@ class AdminController extends AdminBase
                 //  die('Access denied');
            } else {
                 // Если данные правильные, запоминаем пользователя (сессия)
-                Lock::auth($AdminId);
+            Lock::auth($AdminId);
 
                 //Перенаправляем пользователя в закрытую часть  
         //     header("Location: /MVCBlog/admin;");
         // }
             require_once(ROOT . '/views/admin/index.php');
             return true;
-            }
+        }
     }
 
             // Подключаем вид
@@ -54,29 +54,12 @@ class AdminController extends AdminBase
 }
 
 
-    public function actionIndex()
-    {
-        
-        $this->actionLogin();
-        return true;
-    }
+public function actionIndex()
+{
+    
+    $this->actionLogin();
+    return true;
+}
 
-    // /**
-    //  * Action для стартовой страницы "Панель администратора"
-    //  */
-// public function actionIndex()
-// {
-//         // Проверка доступа
-//     if(self::checkAdmin()){
-
-//         // Подключаем вид
-//         require_once(ROOT . '/views/admin/index.php');
-//         return true;
-//     }else{
-//         $this->actionLogin();
-//         return true;
-
-//     }
-//  }   
 
 }

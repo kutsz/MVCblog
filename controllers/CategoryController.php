@@ -1,8 +1,6 @@
 <?php
 
 
-// include ROOT.'/models/Data.php';
-// include_once ROOT.'/models/Category.php';
 class CategoryController
 {
 
@@ -10,23 +8,9 @@ class CategoryController
 	{
 		if($category_id){
 			
-		// $categories = array();
-		// $categories = Category::getCategoriesList();
-
-		// $settings = array();
-		// $settings = HomePage::getSettings();
-
-		// $notes = array();
-		// $notes = LastNote::getNotes();
-
-		// $archive = array();
-		// $archive = Archive::getArchive();
-
-		// $friend = array();
-		// $friend = Friend::getFriend();
 
 			$category = array();
-		    $category = Category::getCategoryItemById($category_id);
+			$category = Category::getCategoryItemById($category_id);
 
 			$data = array();
 			$data = Data::getDataItemById($category_id);

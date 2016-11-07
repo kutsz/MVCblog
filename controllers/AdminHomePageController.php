@@ -23,7 +23,7 @@ class AdminHomePageController extends AdminBase
 
     }
     /**
-     * Action для страницы "Редактировать категорию"///////////////////TODO
+     * Action для страницы "Редактировать категорию"
      */
     public function actionUpdate($id)
     {

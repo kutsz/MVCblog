@@ -31,11 +31,7 @@ class SearchController
 		$date = Data::searchData($search);
 
 
-
-
-		
-		
-		require_once(ROOT.'/views/notes/search.php');
+        require_once(ROOT.'/views/notes/search.php');
 
 		return true;
 		
