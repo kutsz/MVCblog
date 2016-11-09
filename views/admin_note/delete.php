@@ -1,6 +1,8 @@
 
 <?php 
+
 $title = "Страница удаления заметки";
+
 ?>
 
 <?php ob_start(); ?>
@@ -10,11 +12,14 @@ $title = "Страница удаления заметки";
 <form action="" method="POST">
 
 	<?php foreach ($notes as $noteItem): ?>
+
 		<p> 
 			<input type='radio' name='id' value="<?php echo $noteItem['id']; ?>"> 
 			<?php echo $noteItem['title']; ?> 
-		</p>    
+		</p>  
+
 	<?php endforeach; ?>
+	
 	<p>
 		<input type="submit" name="submit" id="submit" value="Удалить категорию">  
 	</p>

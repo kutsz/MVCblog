@@ -2,7 +2,6 @@
 
 $title = "Заметки за ".$dateArchive;
 
-
 ?>
 
 <?php ob_start(); ?>
@@ -13,10 +12,11 @@ $title = "Заметки за ".$dateArchive;
 		<tr>
 			<th> <img src="<?php echo $dateItem['mini_img'];?>">
 				<center>
-					<a href = "/MVCBlog/note/<?php echo $dateItem['id'];?>"> <?php echo $dateItem['title'];?> </a>
+					<a href = "/MVCBlog/note/<?php echo $dateItem['id'];?>"> <?php echo $dateItem['title'];?> 
+					</a>
 				</center>  
 				<p> Дата добавления: <?php echo $dateItem['date'];?> </p> 
-				<p>Автор урока: <?php echo $dateItem['author'];?></p>
+				<p>Автор: <?php echo $dateItem['author'];?></p>
 			</th>
 		</tr>
 
@@ -26,7 +26,8 @@ $title = "Заметки за ".$dateArchive;
 			</td>
 		</tr>
 
-	</table> <br> <br>   
+	</table> <br> <br> 
+
 <?php endforeach; ?>
 
 <?php $content = ob_get_clean(); ?>
@@ -34,4 +35,4 @@ $title = "Заметки за ".$dateArchive;
 <?php include ROOT.'/views/layouts/layout.php';?> 
 
 
-<!--/template/css/style.css -->
+

@@ -3,13 +3,9 @@
 
 $title = "Страница изменения текстов";
 
-
 ?>
 
 <?php ob_start(); ?>
-
-
-
 
 <h3>Страница изменения текстов</h3>
 
@@ -34,24 +30,21 @@ $title = "Страница изменения текстов";
 		Введите полный текст страницы (с тэгами ) <br>
 		<textarea  name = "text" id="text" rows = "15" cols = "70"> 
 			<?= $homePage['text'] ?></textarea> 
-		</p>
-		<p>
-			<input value="<?= $homePage['id'] ?>" type="hidden" name="id"> 
-		</p>
+	</p>
 
-		<p>
-			<input type="submit" name="submit" id="submit" value="Сохранить изменения">  
-		</p>
+	<p>
+		<input value="<?= $homePage['id'] ?>" type="hidden" name="id"> 
+	</p>
 
+	<p>
+		<input type="submit" name="submit" id="submit" value="Сохранить изменения">  
+	</p>
 
+</form>
 
-	</form>
+<?php $content = ob_get_clean(); ?>
 
-	
-
-	<?php $content = ob_get_clean(); ?>
-
-	<?php include ROOT.'/views/layouts/layout_admin.php';?> 
+<?php include ROOT.'/views/layouts/layout_admin.php';?> 
 
 
 

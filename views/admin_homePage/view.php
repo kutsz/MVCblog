@@ -3,17 +3,18 @@
 
 $title = "Страница редактирования текстов ";
 
-
 ?>
 
 <?php ob_start(); ?>
 
 <?php foreach ($homePages as $homePageItem): ?>
+
 	<p> 
 		<a href="/MVCBlog/admin/homePage/update/<?php echo $homePageItem['id']; ?>">
 			<?php echo $homePageItem['title']; ?>
 		</a>
-	</p>    
+	</p>  
+	  
 <?php endforeach; ?>
 
 <?php $content = ob_get_clean(); ?>

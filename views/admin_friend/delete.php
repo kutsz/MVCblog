@@ -1,6 +1,8 @@
 
 <?php 
+
 $title = "Страница удаления сайта-друга";
+
 ?>
 
 <?php ob_start(); ?>
@@ -17,6 +19,7 @@ $title = "Страница удаления сайта-друга";
 		</p>
 
 	<?php endforeach; ?>
+	
 	<p>
 		<input type="submit" name="submit" id="submit" value="Удалить категорию">  
 	</p>

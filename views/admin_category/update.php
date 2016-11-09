@@ -3,13 +3,9 @@
 
 $title = "Страница редактирования категорий ";
 
-
 ?>
 
 <?php ob_start(); ?>
-
-
-
 
 <h3>Редактирование категории</h3>
 
@@ -30,29 +26,27 @@ $title = "Страница редактирования категорий ";
 		<input value="<?php echo $category['meta_k']; ?>" type="text" name="meta_k" id="meta_k"> 
 	</p>
 
-
 	<p>
 		Введите текст категории (с тэгами абзацев) <br>
 		<textarea  name = "text" id="text" rows = "15" cols = "70"> 
 			<?php echo $category['text']; ?> </textarea> 
-		</p>
-		<p>
-			<input value="<?php echo $category['id']; ?>" type="hidden" name="id"> 
-		</p>
+	</p>
 
-		<p>
-			<input type="submit" name="submit" id="submit" value="Сохранить изменения">  
-		</p>
+	<p>
+		<input value="<?php echo $category['id']; ?>" type="hidden" name="id"> 
+	</p>
+
+	<p>
+		<input type="submit" name="submit" id="submit" value="Сохранить изменения">  
+	</p>
 
 
 
-	</form>
+</form>
 
-	
+<?php $content = ob_get_clean(); ?>
 
-	<?php $content = ob_get_clean(); ?>
-
-	<?php include ROOT.'/views/layouts/layout_admin.php';?> 
+<?php include ROOT.'/views/layouts/layout_admin.php';?> 
 
 
 

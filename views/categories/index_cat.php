@@ -4,21 +4,22 @@ $description = $category['meta_d'];
 $keywords = $category['meta_k'];
 $title = $category['title']; 
 
-
 ?>
 
  <?php ob_start(); ?>
 
 <?php foreach ($data as $dataItem): ?>
+
 	<?php echo $dataItem['text']; ?>
  <table>
 		<tr>
 			<th> <img src="<?php echo $dataItem['mini_img'];?>">
                  <center>
-                 <a href = "/MVCBlog/note/<?php echo $dataItem['id'];?>"> <?php echo $dataItem['title'];?> </a>
+                 <a href = "/MVCBlog/note/<?php echo $dataItem['id'];?>"> <?php echo $dataItem['title'];?>
+                  </a>
                  </center>  
                  <p> Дата добавления: <?php echo $dataItem['date'];?> </p> 
-                 <p>Автор урока: <?php echo $dataItem['author'];?></p>
+                 <p>Автор: <?php echo $dataItem['author'];?></p>
              </th>
 		</tr>
 
